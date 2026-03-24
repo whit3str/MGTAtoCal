@@ -1,0 +1,104 @@
+2026-03-24 19:32:43,936 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 19:33:56,576 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 19:34:23,009 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 19:34:38,969 - MGTAtoCal - INFO - Fetching upcoming sets from Scryfall...
+2026-03-24 19:34:40,245 - MGTAtoCal - INFO - Found 3 valid upcoming sets.
+2026-03-24 19:34:40,257 - MGTAtoCal - INFO - Added/Updated 3 sets in the database.
+2026-03-24 19:34:46,978 - MGTAtoCal - INFO - Found 3 sets requiring wallpaper download.
+2026-03-24 19:34:46,979 - MGTAtoCal - INFO - Processing extension: Secrets of Strixhaven (SOS), release year: 2026
+2026-03-24 19:34:49,574 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/sos/sos_alg_en.zip
+2026-03-24 19:34:49,840 - MGTAtoCal - WARNING - No 1920x1080 wallpapers found inside ZIP for SOS.
+2026-03-24 19:34:54,069 - MGTAtoCal - WARNING - Failed to find wallpaper for SOS after trying all variants.
+2026-03-24 19:34:54,246 - MGTAtoCal - INFO - Processing extension: Marvel Super Heroes (MSH), release year: 2026
+2026-03-24 19:34:59,480 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/msh/msh_alg_en.zip
+2026-03-24 19:34:59,916 - MGTAtoCal - WARNING - No 1920x1080 wallpapers found inside ZIP for MSH.
+2026-03-24 19:35:03,880 - MGTAtoCal - WARNING - Failed to find wallpaper for MSH after trying all variants.
+2026-03-24 19:35:04,187 - MGTAtoCal - INFO - Processing extension: Through the Omenpaths 2 (OM2), release year: 2026
+2026-03-24 19:35:05,535 - MGTAtoCal - WARNING - Failed to find wallpaper for OM2 after trying all variants.
+2026-03-24 19:35:05,541 - MGTAtoCal - INFO - Wallpaper processing completed. Successfully downloaded 0/3.
+2026-03-24 19:35:36,817 - MGTAtoCal - ERROR - GOOGLE_CALENDAR_ID is missing in .env configuration.
+2026-03-24 19:39:06,147 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 19:39:12,269 - MGTAtoCal - ERROR - GOOGLE_CALENDAR_ID is missing in .env configuration.
+2026-03-24 20:42:09,351 - MGTAtoCal - ERROR - GOOGLE_CALENDAR_ID is missing in .env configuration.
+2026-03-24 20:56:24,656 - MGTAtoCal - INFO - Found 3 sets requiring Google Calendar events.
+2026-03-24 20:56:24,656 - MGTAtoCal - INFO - Requesting new Google Calendar Token via browser...
+2026-03-24 20:57:07,956 - google_auth_oauthlib.flow - INFO - "GET /?state=eV6cCehE8SVMwdpZfZ7ei7NkmjV0ht&iss=https://accounts.google.com&code=4/0Aci98E-BGrOhDuKojHa3pzvePX57AE7PizV3VqRg-eDJ8h30f4XLGZwejz3BqPWiNF65Xg&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 200 65
+2026-03-24 20:57:08,546 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-03-24 20:57:09,083 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 20:57:09,083 - MGTAtoCal - ERROR - Failed to create Google Calendar event for SOS: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/ton_id_d_agenda_ici%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 20:57:09,114 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 20:57:09,114 - MGTAtoCal - ERROR - Failed to create Google Calendar event for MSH: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/ton_id_d_agenda_ici%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 20:57:09,150 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 20:57:09,151 - MGTAtoCal - ERROR - Failed to create Google Calendar event for OM2: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/ton_id_d_agenda_ici%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 20:57:09,152 - MGTAtoCal - INFO - Calendar sync completed. Successfully created 0/3 events.
+2026-03-24 19:57:39,462 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 19:57:49,864 - MGTAtoCal - INFO - Found 3 sets requiring Google Calendar events.
+2026-03-24 19:57:49,872 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-03-24 19:57:49,966 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 19:57:49,967 - MGTAtoCal - ERROR - Failed to create Google Calendar event for SOS: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/3058de6b97eb29034014652b8c9111c3df17efcaf783aedb7415fe65165f231b%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 19:57:50,019 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 19:57:50,020 - MGTAtoCal - ERROR - Failed to create Google Calendar event for MSH: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/3058de6b97eb29034014652b8c9111c3df17efcaf783aedb7415fe65165f231b%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 19:57:50,069 - googleapiclient.http - WARNING - Encountered 403 Forbidden with reason "accessNotConfigured"
+2026-03-24 19:57:50,070 - MGTAtoCal - ERROR - Failed to create Google Calendar event for OM2: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/3058de6b97eb29034014652b8c9111c3df17efcaf783aedb7415fe65165f231b%40group.calendar.google.com/events?alt=json returned "Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.". Details: "[{'message': 'Google Calendar API has not been used in project 250940442772 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/calendar-json.googleapis.com/overview?project=250940442772 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'domain': 'usageLimits', 'reason': 'accessNotConfigured', 'extendedHelp': 'https://console.developers.google.com'}]">
+2026-03-24 19:57:50,070 - MGTAtoCal - INFO - Calendar sync completed. Successfully created 0/3 events.
+2026-03-24 19:58:27,574 - MGTAtoCal - INFO - Found 3 sets requiring Google Calendar events.
+2026-03-24 19:58:27,579 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-03-24 19:58:28,014 - MGTAtoCal - INFO - Event created for SOS: https://www.google.com/calendar/event?eid=N29va3Mxbjh0aHNzaTU0NTRpMWo0MXFxOWcgMzA1OGRlNmI5N2ViMjkwMzQwMTQ2NTJiOGM5MTExYzNkZjE3ZWZjYWY3ODNhZWRiNzQxNWZlNjUxNjVmMjMxYkBn
+2026-03-24 19:58:28,027 - MGTAtoCal - INFO - Marked Google Calendar event as created for set SOS.
+2026-03-24 19:58:28,380 - MGTAtoCal - INFO - Event created for MSH: https://www.google.com/calendar/event?eid=ODQ1YTZobTI1YnNmOGdlOTZyaW1yNHUwcGsgMzA1OGRlNmI5N2ViMjkwMzQwMTQ2NTJiOGM5MTExYzNkZjE3ZWZjYWY3ODNhZWRiNzQxNWZlNjUxNjVmMjMxYkBn
+2026-03-24 19:58:28,392 - MGTAtoCal - INFO - Marked Google Calendar event as created for set MSH.
+2026-03-24 19:58:28,729 - MGTAtoCal - INFO - Event created for OM2: https://www.google.com/calendar/event?eid=aXA1N3JxYW82cXZjbHNxMWFwNHJobG1wcmsgMzA1OGRlNmI5N2ViMjkwMzQwMTQ2NTJiOGM5MTExYzNkZjE3ZWZjYWY3ODNhZWRiNzQxNWZlNjUxNjVmMjMxYkBn
+2026-03-24 19:58:28,742 - MGTAtoCal - INFO - Marked Google Calendar event as created for set OM2.
+2026-03-24 19:58:28,742 - MGTAtoCal - INFO - Calendar sync completed. Successfully created 3/3 events.
+2026-03-24 19:58:51,729 - MGTAtoCal - INFO - No pending Google Calendar events to create.
+2026-03-24 19:58:54,942 - MGTAtoCal - INFO - Found 3 sets requiring wallpaper download.
+2026-03-24 19:58:54,944 - MGTAtoCal - INFO - Processing extension: Secrets of Strixhaven (SOS), release year: 2026
+2026-03-24 19:58:57,270 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/sos/sos_alg_en.zip
+2026-03-24 19:58:57,560 - MGTAtoCal - WARNING - No 1920x1080 wallpapers found inside ZIP for SOS.
+2026-03-24 19:59:01,635 - MGTAtoCal - WARNING - Failed to find wallpaper for SOS after trying all variants.
+2026-03-24 19:59:01,981 - MGTAtoCal - INFO - Processing extension: Marvel Super Heroes (MSH), release year: 2026
+2026-03-24 19:59:07,218 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/msh/msh_alg_en.zip
+2026-03-24 19:59:07,623 - MGTAtoCal - WARNING - No 1920x1080 wallpapers found inside ZIP for MSH.
+2026-03-24 19:59:11,663 - MGTAtoCal - WARNING - Failed to find wallpaper for MSH after trying all variants.
+2026-03-24 19:59:11,864 - MGTAtoCal - INFO - Processing extension: Through the Omenpaths 2 (OM2), release year: 2026
+2026-03-24 19:59:15,847 - MGTAtoCal - WARNING - Failed to find wallpaper for OM2 after trying all variants.
+2026-03-24 19:59:15,848 - MGTAtoCal - INFO - Wallpaper processing completed. Successfully downloaded 0/3.
+2026-03-24 20:26:15,031 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 20:26:35,193 - MGTAtoCal - INFO - Found 3 sets requiring wallpaper download.
+2026-03-24 20:26:35,198 - MGTAtoCal - INFO - Processing extension: Secrets of Strixhaven (SOS), release year: 2026
+2026-03-24 20:26:37,601 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/sos/sos_alg_en.zip
+2026-03-24 20:26:40,705 - MGTAtoCal - INFO - Falling back to largest image: SOCRare.png (153.8 KB)
+2026-03-24 20:26:40,706 - MGTAtoCal - INFO - Found 1 wallpaper candidate(s) for SOS.
+2026-03-24 20:26:40,742 - MGTAtoCal - INFO - Saved wallpaper as: SOS_wallpaper_hi-res.png
+2026-03-24 20:26:40,903 - MGTAtoCal - INFO - Marked wallpaper as downloaded for set SOS.
+2026-03-24 20:26:40,904 - MGTAtoCal - INFO - Processing extension: Marvel Super Heroes (MSH), release year: 2026
+2026-03-24 20:26:42,360 - MGTAtoCal - INFO - Successfully downloaded and extracted from: https://media.wizards.com/2026/wpn/marketing_materials/msh/msh_alg_en.zip
+2026-03-24 20:26:45,889 - MGTAtoCal - INFO - Falling back to largest image: MTGMSH_expsmbl_uc.png (106.3 KB)
+2026-03-24 20:26:45,889 - MGTAtoCal - INFO - Found 1 wallpaper candidate(s) for MSH.
+2026-03-24 20:26:45,920 - MGTAtoCal - INFO - Saved wallpaper as: MSH_wallpaper_hi-res.png
+2026-03-24 20:26:46,083 - MGTAtoCal - INFO - Marked wallpaper as downloaded for set MSH.
+2026-03-24 20:26:46,084 - MGTAtoCal - INFO - Processing extension: Through the Omenpaths 2 (OM2), release year: 2026
+2026-03-24 20:27:00,499 - MGTAtoCal - WARNING - Failed to find wallpaper for OM2 after trying all variants.
+2026-03-24 20:27:00,500 - MGTAtoCal - INFO - Wallpaper processing completed. Successfully downloaded 2/3.
+2026-03-24 20:29:29,943 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 20:30:10,551 - MGTAtoCal - ERROR - Error initializing database: unable to open database file
+2026-03-24 20:30:30,120 - MGTAtoCal - ERROR - Error initializing database: unable to open database file
+2026-03-24 20:31:11,792 - MGTAtoCal - ERROR - Error initializing database: unable to open database file
+2026-03-24 20:31:30,087 - MGTAtoCal - ERROR - Error initializing database: unable to open database file
+2026-03-24 20:32:04,701 - MGTAtoCal - ERROR - Error initializing database: unable to open database file
+2026-03-24 20:32:20,187 - MGTAtoCal - INFO - Database initialized successfully.
+2026-03-24 20:32:27,893 - MGTAtoCal - INFO - Fetching upcoming sets from Scryfall...
+2026-03-24 20:32:28,837 - MGTAtoCal - INFO - Found 3 valid upcoming sets.
+2026-03-24 20:32:28,854 - MGTAtoCal - INFO - Added/Updated 3 sets in the database.
+2026-03-24 20:32:34,147 - MGTAtoCal - INFO - Found 3 sets requiring wallpaper download.
+2026-03-24 20:32:34,148 - MGTAtoCal - INFO - Processing extension: Secrets of Strixhaven (SOS), release year: 2026
+2026-03-24 20:32:34,826 - MGTAtoCal - INFO - Found 1 wallpaper candidate(s) for SOS.
+2026-03-24 20:32:34,861 - MGTAtoCal - INFO - Saved wallpaper as: SOS_wallpaper_1920x1080.jpg
+2026-03-24 20:32:34,885 - MGTAtoCal - INFO - Marked wallpaper as downloaded for set SOS.
+2026-03-24 20:32:34,887 - MGTAtoCal - INFO - Processing extension: Marvel Super Heroes (MSH), release year: 2026
+2026-03-24 20:32:35,849 - MGTAtoCal - INFO - Found 2 wallpaper candidate(s) for MSH.
+2026-03-24 20:32:35,892 - MGTAtoCal - INFO - Saved wallpaper as: MSH_wallpaper_1920x1080.jpg
+2026-03-24 20:32:35,932 - MGTAtoCal - INFO - Marked wallpaper as downloaded for set MSH.
+2026-03-24 20:32:35,933 - MGTAtoCal - INFO - Processing extension: Through the Omenpaths 2 (OM2), release year: 2026
+2026-03-24 20:32:46,847 - MGTAtoCal - WARNING - Failed to find wallpaper for OM2 after trying all year/variant combinations.
+2026-03-24 20:32:46,848 - MGTAtoCal - INFO - Wallpaper processing completed. Successfully downloaded 2/3.

@@ -1,0 +1,23 @@
+services:
+  mgtatocal:
+    build: .
+    container_name: mgtatocal_app
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      # Configurations et tokens
+      - ./.env:/app/.env
+      - ./credentials.json:/app/credentials.json
+      - ./token.pickle:/app/token.pickle
+      
+      # Persistance des données et assets
+      - ./resources:/app/resources
+      
+      # Persistance de la base de données et des logs (Voir les notes importantes avant de lancer)
+      - ./database.sqlite:/app/database.sqlite
+      - ./app.log:/app/app.log
+    # Environment variables (Fill these in or use a .env file)
+    environment:
+      - GOOGLE_CALENDAR_ID=${GOOGLE_CALENDAR_ID:-}
+      # Automated sync runs every 24h by default inside the container

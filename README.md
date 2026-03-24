@@ -1,103 +1,75 @@
-# MTG Release Tracker
+# MGTAtoCal - MTG Release Tracker & Automator
 
-Un ensemble d'outils pour suivre les prochaines sorties de Magic: The Gathering, télécharger automatiquement les fonds d'écran officiels et créer des événements dans Google Calendar.
+A modern toolkit to track upcoming Magic: The Gathering releases, automatically download official wallpapers, and sync release dates to your Google Calendar. Now featuring a web dashboard and Docker support.
 
-## Présentation
+## Features
 
-Ce projet contient trois scripts Python qui fonctionnent ensemble pour :
+- **Automated Tracking**: Fetches upcoming sets from the Scryfall API.
+- **Wallpaper Downloader**: Automatically finds and downloads high-resolution (1920x1080) marketing wallpapers.
+- **Calendar Sync**: Creates events in your Google Calendar for every MTG set release.
+- **Web Dashboard**: A beautiful FastAPI-based interface to monitor and trigger tasks.
+- **Dockerized**: Easy deployment with Docker and Docker Compose.
+- **Daily Automation**: Built-in scheduler runs a full sync every 24 hours.
 
-1. **CODEDumper.py** - Récupérer les informations sur les prochaines sorties de sets Magic: The Gathering via l'API Scryfall
-2. **WPDumper.py** - Télécharger automatiquement les fonds d'écran (wallpapers) officiels des prochaines extensions
-3. **CODEtoGCal.py** - Créer des événements dans Google Calendar pour les dates de sortie
+## Quick Start (Docker)
 
-## Prérequis
+The easiest way to run MGTAtoCal is using Docker.
 
-- Python 3.6 ou plus récent
-- Les bibliothèques Python listées dans `requirements.txt`
-- Un compte Google et des identifiants OAuth pour l'API Google Calendar
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/MGTAtoCal.git
+    cd MGTAtoCal
+    ```
 
-## Installation
+2.  **Configure Environment**:
+    - Copy `.env.example` to `.env`.
+    - Set your `GOOGLE_CALENDAR_ID` in the `.env` file.
 
-1. Clonez ce dépôt ou téléchargez les fichiers
-2. Installez les dépendances :
+3.  **Google API Setup**:
+    - Place your `credentials.json` (OAuth Client ID) in the root directory.
+    - Run the initial authentication once on your host machine to generate `token.pickle` (see [OAuth Setup](#oauth-setup)).
 
-```bash
-pip install -r requirements.txt
-```
+4.  **Run with Docker Compose**:
+    ```bash
+    docker-compose up -d
+    ```
+    Access the dashboard at `http://localhost:8000`.
 
-3. Pour l'intégration avec Google Calendar, vous devez :
-   - Créer un projet dans la [Console Google Cloud](https://console.cloud.google.com/)
-   - Activer l'API Google Calendar
-   - Créer des identifiants OAuth et télécharger le fichier `credentials.json`
-   - Placer le fichier `credentials.json` à la racine du projet
+## Manual Installation
 
-## Configuration
+1.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Les fichiers suivants sont utilisés pour la configuration :
+2.  **Usage**:
+    - Run the web dashboard: `python web.py`
+    - Or use the CLI orchestrator:
+      - `python main.py --fetch` (Update database from Scryfall)
+      - `python main.py --wallpapers` (Download missing wallpapers)
+      - `python main.py --calendar` (Sync to Google Calendar)
+      - `python main.py --all` (Run everything)
 
-- **upcoming_magic_sets.csv** - Contient les informations sur les prochains sets Magic (généré par CODEDumper.py)
-- **credentials.json** - Identifiants OAuth pour l'API Google Calendar (à fournir par l'utilisateur)
-- **token.pickle** - Token d'authentification pour Google Calendar (généré automatiquement)
+## Project Structure
 
-## Utilisation
+- `web.py`: FastAPI web server and dashboard.
+- `main.py`: CLI orchestrator.
+- `scryfall_fetcher.py`: Scryfall API integration.
+- `wallpaper_downloader.py`: Intelligent wallpaper scraping and extraction.
+- `calendar_manager.py`: Google Calendar API integration.
+- `database.py`: SQLite state management.
+- `config.py`: Centralized configuration and logging.
+- `resources/`: Downloaded wallpapers storage.
 
-### 1. Récupérer les informations sur les prochains sets
+## OAuth Setup
 
-```bash
-python CODEDumper.py
-```
+To use Google Calendar, you need to:
+1.  Create a project in [Google Cloud Console](https://console.cloud.google.com/).
+2.  Enable the **Google Calendar API**.
+3.  Create **OAuth Client ID** credentials (Desktop App).
+4.  Download the JSON and rename it to `credentials.json` in the root folder.
+5.  Run `python calendar_manager.py` once locally to open the browser for initial authorization. This creates `token.pickle`.
 
-Ce script :
-- Récupère les données des sets Magic via l'API Scryfall
-- Filtre les sets pour exclure certains types (commander, promo, etc.)
-- Sélectionne les 10 prochains sets à sortir
-- Génère le fichier `upcoming_magic_sets.csv`
+## License
 
-### 2. Télécharger les fonds d'écran
-
-```bash
-python WPDumper.py
-```
-
-Ce script :
-- Lit le fichier `upcoming_magic_sets.csv`
-- Tente de télécharger les fonds d'écran officiels pour chaque set
-- Extrait et renomme les fonds d'écran en résolution 1920x1080
-- Les sauvegarde dans le dossier `resources/`
-
-### 3. Créer des événements dans Google Calendar
-
-```bash
-python CODEtoGCal.py
-```
-
-Ce script :
-- Lit le fichier `upcoming_magic_sets.csv`
-- Crée des événements dans Google Calendar pour chaque date de sortie
-- Utilise l'authentification OAuth pour accéder à votre calendrier
-- Ajoute les événements dans le calendrier spécifié par l'ID
-
-## Structure des fichiers
-
-```
-.
-├── CODEDumper.py         # Script pour récupérer les sets via l'API Scryfall
-├── CODEtoGCal.py         # Script pour créer des événements dans Google Calendar
-├── WPDumper.py           # Script pour télécharger les fonds d'écran officiels
-├── upcoming_magic_sets.csv # Données des prochains sets
-├── requirements.txt      # Dépendances Python
-├── .gitignore            # Fichiers ignorés par git
-├── credentials.json      # Identifiants OAuth (non inclus, à créer)
-├── token.pickle          # Token d'authentification (généré automatiquement)
-└── resources/            # Dossier contenant les fonds d'écran téléchargés
-```
-
-## Notes
-
-- Le script `WPDumper.py` tente de deviner les URLs des fonds d'écran sur le site de Wizards of the Coast, qui peuvent changer au fil du temps
-- L'ID du calendrier dans `CODEtoGCal.py` doit être remplacé par l'ID de votre propre calendrier Google
-- Les fichiers `credentials.json` et `token.pickle` contiennent des informations sensibles et sont donc exclus dans le `.gitignore`
-
-## Licence
-
-[Ajoutez ici les informations de licence selon votre préférence]
+MIT License - Feel free to use and contribute!

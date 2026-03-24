@@ -1,0 +1,10 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+.env
+credentials.json
+token.pickle
+database.sqlite
+app.log
+resources/

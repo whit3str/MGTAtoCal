@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGTAtoCal Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>MGTAtoCal <span>Dashboard</span></h1>
+            <p>Gestionnaire d'extensions Magic: The Gathering</p>
+        </header>
+
+        <section class="controls glass-panel">
+            <h2>Actions Rapides</h2>
+            <div class="button-group">
+                <button onclick="triggerAction('fetch')" class="btn btn-primary">
+                    <span class="icon">🔄</span> Actualiser Scryfall
+                </button>
+                <button onclick="triggerAction('wallpapers')" class="btn btn-secondary">
+                    <span class="icon">🖼️</span> Télécharger Wallpapers
+                </button>
+                <button onclick="triggerAction('calendar')" class="btn btn-secondary">
+                    <span class="icon">📅</span> Synchroniser Agenda
+                </button>
+                <button onclick="triggerAction('all')" class="btn btn-accent">
+                    <span class="icon">🚀</span> Tout faire (Complet)
+                </button>
+            </div>
+            <div id="notification" class="notification hidden"></div>
+        </section>
+
+        <section class="data-table glass-panel">
+            <h2>Prochains Sets à venir</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Nom complet</th>
+                            <th>Date de Sortie</th>
+                            <th>État Wallpaper</th>
+                            <th>État Google Calendar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for set in sets %}
+                        <tr>
+                            <td><span class="badge badge-code">{{ set.code }}</span></td>
+                            <td>{{ set.name }}</td>
+                            <td>{{ set.release_date }}</td>
+                            <td>
+                                {% if set.wallpaper_downloaded %}
+                                <span class="badge badge-success">Téléchargé</span>
+                                {% else %}
+                                <span class="badge badge-pending">En attente</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if set.gcal_created %}
+                                <span class="badge badge-success">Créé</span>
+                                {% else %}
+                                <span class="badge badge-pending">En attente</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% if not sets %}
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted);">Aucune donnée dans la base. Lancez l'actualisation Scryfall.</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
